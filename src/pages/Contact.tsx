@@ -4,7 +4,6 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaLinkedin,
 } from "react-icons/fa";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -19,14 +18,14 @@ function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
 
